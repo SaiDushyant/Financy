@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+@layer components {
+  .box {
+    @apply border-[1px] border-gray-200 px-3 py-2;
+  }
+}
