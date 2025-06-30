@@ -162,6 +162,51 @@ function NavBar() {
           </button>
         </div>
         <div className="bg-gray-100 dark:bg-zinc-700 w-full h-[2px]"></div>
+        <nav className="flex flex-col px-8 py-10 space-y-7 text-4xl font-medium">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `cursor-pointer ${
+                isActive ? "text-blue-600" : "text-gray-600 dark:text-gray-300"
+              } hover:text-blue-800`
+            }
+          >
+            Overview
+          </NavLink>
+
+          <NavLink
+            to="/transactions"
+            className={({ isActive }) =>
+              `cursor-pointer ${
+                isActive ? "text-blue-600" : "text-gray-600 dark:text-gray-300"
+              } hover:text-blue-800`
+            }
+          >
+            Transactions
+          </NavLink>
+
+          <NavLink
+            to="/analytics"
+            className={({ isActive }) =>
+              `cursor-pointer ${
+                isActive ? "text-blue-600" : "text-gray-600 dark:text-gray-300"
+              } hover:text-blue-800`
+            }
+          >
+            Analytics
+          </NavLink>
+
+          <NavLink
+            to="/account"
+            className={({ isActive }) =>
+              `cursor-pointer ${
+                isActive ? "text-blue-600" : "text-gray-600 dark:text-gray-300"
+              } hover:text-blue-800`
+            }
+          >
+            Account
+          </NavLink>
+        </nav>
       </div>
     </div>
   );
