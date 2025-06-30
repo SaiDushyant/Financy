@@ -20,25 +20,27 @@ function Home() {
         <p className="text-4xl font-medium dark:text-white">Hello, Sai</p>
         <div className="hidden md:flex justify-center items-center gap-5">
           <div className="flex justify-center items-center">
-            <div className="box rounded-l-lg text-sm font-medium text-gray-600">
+            <div className="box rounded-l-lg text-sm font-medium text-gray-600 dark:border-gray-600 dark:text-gray-300">
               Today
             </div>
-            <div className="box border-l-0 text-sm font-medium text-gray-600">
+            <div className="box border-l-0 text-sm font-medium text-gray-600 dark:border-gray-600 dark:text-gray-300">
               This week
             </div>
-            <div className="box border-l-0 text-sm font-medium text-gray-600">
+            <div className="box border-l-0 text-sm font-medium text-gray-600 dark:border-gray-600 dark:text-gray-300">
               This month
             </div>
-            <div className="box border-l-0 rounded-r-lg text-sm font-medium text-gray-600">
+            <div className="box border-l-0 rounded-r-lg text-sm font-medium text-gray-600 dark:border-gray-600 dark:text-gray-300">
               This year
             </div>
           </div>
-          <div className="box flex justify-center items-center gap-2 rounded-lg">
+          <div className="box flex justify-center items-center gap-2 rounded-lg dark:border-gray-600 dark:text-gray-300">
             <SlCalender />
-            <p className="text-sm font-medium text-gray-600">Select Period</p>
+            <p className="text-sm font-medium text-gray-600 dark:text-gray-300">
+              Select Period
+            </p>
           </div>
         </div>
-        <div className="relative md:hidden inline-block text-left">
+        <div className="relative md:hidden inline-block text-left ">
           <button
             onClick={() => setIsOpen((prev: any) => !prev)}
             className="w-35 text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex items-center justify-between dark:bg-blue-600 dark:hover:bg-blue-700"
@@ -71,42 +73,50 @@ function Home() {
           )}
         </div>
       </section>
-      <section>
+      <section className=" dark:bg-zinc-800 bg-white py-5">
         <div className="grid grid-cols-2 md:grid-cols-3 px-5 md:px-32 gap-2 md:gap-10">
-          <div className="box shadow rounded-xl col-span-2 md:col-span-1 flex flex-col gap-2 px-5 md:px-7 py-5">
-            <p className="md:text-md font-medium text-gray-600">Balance</p>
+          <div className="box shadow dark:shadow-gray-500 rounded-xl dark:border-gray-600 col-span-2 md:col-span-1 flex flex-col gap-2 px-5 md:px-7 py-5">
+            <p className="md:text-md font-medium text-gray-600 dark:text-gray-300">
+              Balance
+            </p>
             <div className="flex flex-row justify-between">
-              <p className="text-5xl font-medium text-blue-600">$9999</p>
+              <p className="text-5xl font-medium text-blue-600 dark:text-blue-500">
+                $9999
+              </p>
               <div className="flex items-end">
-                <div className="box border-gray-300 px-3 py-1 rounded-lg flex justify-between items-center gap-1 text-sm font-medium text-gray-600">
+                <div className="box border-gray-300 px-3 py-1 rounded-lg flex justify-between items-center gap-1 text-sm font-medium text-gray-600 dark:text-gray-300">
                   <FaArrowUp size={12} color={"green"} />
                   12%
                 </div>
               </div>
             </div>
           </div>
-          <div className="box shadow rounded-xl flex flex-col gap-1 md:gap-2 px-3 md:px-7 py-2 md:py-5">
-            <p className="text-sm md:text-md font-medium text-gray-600">
+          <div className="box shadow dark:shadow-gray-500 rounded-xl dark:border-gray-600 flex flex-col gap-1 md:gap-2 px-3 md:px-7 py-2 md:py-5">
+            <p className="text-sm md:text-md font-medium text-gray-600 dark:text-gray-300">
               Incomes
             </p>
             <div className="flex flex-row justify-between gap-[10px]">
-              <p className="text-3xl md:text-5xl font-medium">$9999</p>
+              <p className="text-3xl md:text-5xl font-medium dark:text-gray-100">
+                $9999
+              </p>
               <div className="flex items-end">
-                <div className="box border-gray-300 px-1 md:px-3 py-1 rounded-lg flex justify-between items-center gap-1 text-[10px] md:text-sm font-medium text-gray-600">
+                <div className="box border-gray-300 px-1 md:px-3 py-1 rounded-lg flex justify-between items-center gap-1 text-[10px] md:text-sm font-medium text-gray-600 dark:text-gray-300">
                   <FaArrowUp size={12} color={"green"} />
                   12%
                 </div>
               </div>
             </div>
           </div>
-          <div className="box shadow rounded-xl flex flex-col gap-1 md:gap-2 px-3 md:px-7 py-2 md:py-5">
-            <p className="text-sm md:text-md font-medium text-gray-600">
+          <div className="box shadow dark:shadow-gray-500 rounded-xl dark:border-gray-600 flex flex-col gap-1 md:gap-2 px-3 md:px-7 py-2 md:py-5">
+            <p className="text-sm md:text-md font-medium text-gray-600 dark:text-gray-300">
               Expenses
             </p>
             <div className="flex flex-row justify-between gap-[10px]">
-              <p className="text-3xl md:text-5xl font-medium">$9999</p>
+              <p className="text-3xl md:text-5xl font-medium dark:text-gray-100">
+                $9999
+              </p>
               <div className="flex items-end">
-                <div className="box border-gray-300 px-1 md:px-3 py-1 rounded-lg flex justify-between items-center gap-1 text-[10px] md:text-sm font-medium text-gray-600">
+                <div className="box border-gray-300 px-1 md:px-3 py-1 rounded-lg flex justify-between items-center gap-1 text-[10px] md:text-sm font-medium text-gray-600 dark:text-gray-300">
                   <FaArrowDown size={12} color={"red"} />
                   12%
                 </div>

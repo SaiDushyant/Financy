@@ -2,12 +2,12 @@ import Logo from "../assets/icons/Logo";
 import { IoCloseOutline } from "react-icons/io5";
 import { MdSunny, MdOutlineSettings } from "react-icons/md";
 import { BsMoonStarsFill } from "react-icons/bs";
-import { GoBell } from "react-icons/go";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaArrowRight } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import { useDarkMode } from "../context/ThemeContext"; // adjust path as needed
 import { Link, NavLink } from "react-router-dom";
+import { Sai } from "../assets/images"; // adjust path as needed
 
 function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -86,9 +86,8 @@ function NavBar() {
           onClick={toggleDarkMode}
           className="text-gray-600 dark:text-white"
         >
-          {darkMode ? <MdSunny size={24} /> : <BsMoonStarsFill size={18} />}
+          {darkMode ? <MdSunny size={30} /> : <BsMoonStarsFill size={25} />}
         </button>
-        <GoBell size={20} className="text-gray-600 dark:text-white" />
         <div className="relative inline-block text-left">
           <button
             onClick={() => setIsDropDownOpen((prev) => !prev)}
@@ -96,18 +95,16 @@ function NavBar() {
             type="button"
           >
             <span className="sr-only">Open user menu</span>
-            <img
-              className="w-8 h-8 rounded-full"
-              src="/docs/images/people/profile-picture-3.jpg"
-              alt="user photo"
-            />
+            <img className="w-8 h-8 rounded-full" src={Sai} alt="user photo" />
           </button>
 
           {isDropDownOpen && (
             <div className="z-50 absolute right-0 mt-2 bg-white border-[1px] border-gray-200 dark:border-gray-800 divide-y divide-gray-300 rounded-lg shadow-2xl w-44 dark:bg-gray-700 dark:divide-gray-600">
               <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
-                <div>Bonnie Green</div>
-                <div className="font-medium truncate">name@flowbite.com</div>
+                <div>Sai Dushyant</div>
+                <div className="font-medium truncate">
+                  saidushyant04@gmail.com
+                </div>
               </div>
 
               <div className="text-sm text-gray-700 dark:text-gray-200">

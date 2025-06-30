@@ -8,6 +8,6 @@ body {
 
 @layer components {
   .box {
-    @apply border-[1px] border-gray-200 px-3 py-2;
+    @apply border-[1px] border-gray-300 px-3 py-2;
   }
 }
