@@ -1,5 +1,5 @@
 {
-  "hello": "Hello, {{name}} !",
+  "welcome": "Welcome !",
   "today": "Today",
   "week": "This week",
   "month": "This month",
