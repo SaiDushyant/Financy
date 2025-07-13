@@ -5,7 +5,7 @@ import { MdSunny, MdOutlineSettings } from "react-icons/md";
 import { BsMoonStarsFill } from "react-icons/bs";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaArrowRight } from "react-icons/fa6";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDarkMode } from "../context/ThemeContext"; // adjust path as needed
 import { Link, NavLink } from "react-router-dom";
 import { Sai } from "../assets/images"; // adjust path as needed
@@ -17,6 +17,25 @@ function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { darkMode, setDarkMode } = useDarkMode();
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
+
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsDropDownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   // Handle body scroll when menu is open
   useEffect(() => {
@@ -92,7 +111,7 @@ function NavBar() {
         >
           {darkMode ? <MdSunny size={30} /> : <BsMoonStarsFill size={25} />}
         </button>
-        <div className="relative inline-block text-left">
+        <div className="relative inline-block text-left" ref={dropdownRef}>
           <button
             onClick={() => setIsDropDownOpen((prev) => !prev)}
             className="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
