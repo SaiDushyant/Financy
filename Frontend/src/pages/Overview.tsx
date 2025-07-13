@@ -1,5 +1,6 @@
 import NavBar from "../components/NavBar";
 import { FaAngleDown, FaArrowUp, FaArrowDown } from "react-icons/fa6";
+import { LuArrowRightLeft, LuCircleMinus, LuCirclePlus } from "react-icons/lu";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -80,7 +81,7 @@ function Overview() {
           )}
         </div>
       </section>
-      <section className="dark:bg-zinc-800 bg-white py-5">
+      <section className="dark:bg-zinc-800 bg-white pb-5">
         <div className="grid grid-cols-2 md:grid-cols-3 px-5 md:px-32 gap-2 md:gap-10">
           <div className="box shadow dark:shadow-gray-500 rounded-xl dark:border-gray-600 col-span-2 md:col-span-1 flex flex-col gap-2 px-5 md:px-7 py-5">
             <p className="md:text-md font-medium text-gray-600 dark:text-gray-300">
@@ -132,7 +133,49 @@ function Overview() {
           </div>
         </div>
       </section>
-      <section className="dark:bg-zinc-800 bg-white py-5"></section>
+      <section className="dark:bg-zinc-800 bg-white pb-5">
+        <div className="grid grid-cols-3 px-5 md:px-32 gap-5 md:gap-10">
+          <div className="box shadow dark:shadow-gray-500 rounded-xl dark:border-gray-600 flex flex-col md:flex-row justify-center md:justify-start items-center gap-2">
+            <div className="flex justify-between items-center bg-green-100 text-green-700 p-3 rounded-lg w-fit h-fit">
+              <LuCirclePlus size={20} />
+            </div>
+            <div className="text-center md:text-left">
+              <p className="text-md font-medium text-black dark:text-white">
+                Add income
+              </p>
+              <p className="hidden md:block text-sm font-medium text-gray-500 dark:text-gray-400">
+                Create an income manually
+              </p>
+            </div>
+          </div>
+          <div className="box shadow dark:shadow-gray-500 rounded-xl dark:border-gray-600 flex flex-col md:flex-row justify-center md:justify-start items-center gap-2">
+            <div className="flex justify-between items-center bg-red-100 text-red-700 p-3 rounded-lg w-fit h-fit">
+              <LuCircleMinus />
+            </div>
+            <div className="text-center md:text-left">
+              <p className="text-md font-medium text-black dark:text-white">
+                Add expense
+              </p>
+              <p className="hidden md:block text-sm font-medium text-gray-500 dark:text-gray-400">
+                Create an expense manually
+              </p>
+            </div>
+          </div>
+          <div className="box shadow dark:shadow-gray-500 rounded-xl dark:border-gray-600 flex flex-col md:flex-row justify-center md:justify-start items-center gap-2">
+            <div className="flex justify-between items-center bg-blue-100 text-blue-700 p-3 rounded-lg w-fit h-fit">
+              <LuArrowRightLeft />
+            </div>
+            <div className="text-center md:text-left">
+              <p className="text-md font-medium text-black dark:text-white">
+                Transfer money
+              </p>
+              <p className="hidden md:block text-sm font-medium text-gray-500 dark:text-gray-400">
+                Select the and transfer money
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
