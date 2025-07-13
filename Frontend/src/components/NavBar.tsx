@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import Logo from "../assets/icons/Logo";
 import { IoCloseOutline } from "react-icons/io5";
 import { MdSunny, MdOutlineSettings } from "react-icons/md";
@@ -8,8 +9,11 @@ import { useEffect, useState } from "react";
 import { useDarkMode } from "../context/ThemeContext"; // adjust path as needed
 import { Link, NavLink } from "react-router-dom";
 import { Sai } from "../assets/images"; // adjust path as needed
+import LanguageSwitcher from "./LanguageSwitcher";
 
 function NavBar() {
+  const { t } = useTranslation("components/navbar");
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { darkMode, setDarkMode } = useDarkMode();
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
@@ -43,7 +47,7 @@ function NavBar() {
             } hover:text-blue-800`
           }
         >
-          Overview
+          {t("overview")}
         </NavLink>
 
         <NavLink
@@ -54,7 +58,7 @@ function NavBar() {
             } hover:text-blue-800`
           }
         >
-          Transactions
+          {t("transactions")}
         </NavLink>
 
         <NavLink
@@ -65,7 +69,7 @@ function NavBar() {
             } hover:text-blue-800`
           }
         >
-          Analytics
+          {t("analytics")}
         </NavLink>
 
         <NavLink
@@ -76,7 +80,7 @@ function NavBar() {
             } hover:text-blue-800`
           }
         >
-          Account
+          {t("accounts")}
         </NavLink>
       </nav>
 
@@ -113,8 +117,9 @@ function NavBar() {
                   className="px-4 py-3 flex gap-2 items-center hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                 >
                   <MdOutlineSettings />
-                  Settings
+                  {t("settings")}
                 </Link>
+                <LanguageSwitcher />
               </div>
 
               <div className="py-3 px-4">
@@ -168,7 +173,7 @@ function NavBar() {
               } hover:text-blue-800`
             }
           >
-            Overview
+            {t("overview")}
           </NavLink>
 
           <NavLink
@@ -179,7 +184,7 @@ function NavBar() {
               } hover:text-blue-800`
             }
           >
-            Transactions
+            {t("transactions")}
           </NavLink>
 
           <NavLink
@@ -190,7 +195,7 @@ function NavBar() {
               } hover:text-blue-800`
             }
           >
-            Analytics
+            {t("analytics")}
           </NavLink>
 
           <NavLink
@@ -201,7 +206,7 @@ function NavBar() {
               } hover:text-blue-800`
             }
           >
-            Account
+            {t("accounts")}
           </NavLink>
         </nav>
       </div>
