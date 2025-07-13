@@ -1,0 +1,10 @@
+{
+  "hello": "Hello, {{name}} !",
+  "today": "Today",
+  "week": "This week",
+  "month": "This month",
+  "year": "This year",
+  "balance": "Balance",
+  "income": "Income",
+  "expense": "Expense"
+}

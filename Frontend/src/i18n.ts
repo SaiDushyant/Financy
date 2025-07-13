@@ -11,6 +11,10 @@ i18n
   .init({
     fallbackLng: "en",
     supportedLngs: ["en", "ta"],
+    detection: {
+      order: ["localStorage", "navigator", "htmlTag"],
+      caches: ["localStorage"], // this saves selected language
+    },
     ns: [
       "Pages/account",
       "Pages/analytics",

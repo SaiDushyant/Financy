@@ -10,6 +10,8 @@ import { useDarkMode } from "../context/ThemeContext"; // adjust path as needed
 import { Link, NavLink } from "react-router-dom";
 import { Sai } from "../assets/images"; // adjust path as needed
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useAuth } from "../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
 
 function NavBar() {
   const { t } = useTranslation("components/navbar");
@@ -19,6 +21,14 @@ function NavBar() {
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
 
   const dropdownRef = useRef<HTMLDivElement | null>(null);
+
+  const { logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -59,7 +69,7 @@ function NavBar() {
       {/* Navigation Links */}
       <nav className="hidden md:flex space-x-7 font-medium text-lg">
         <NavLink
-          to="/"
+          to="/overview"
           className={({ isActive }) =>
             `cursor-pointer ${
               isActive ? "text-blue-600" : "text-gray-600 dark:text-gray-300"
@@ -142,7 +152,10 @@ function NavBar() {
               </div>
 
               <div className="py-3 px-4">
-                <button className="flex items-center gap-4 px-4 py-2 text-sm font-bold text-white rounded-lg bg-red-500 hover:bg-red-700 dark:hover:bg-red-600">
+                <button
+                  onClick={handleLogout}
+                  className="flex items-center gap-4 px-4 py-2 text-sm font-bold text-white rounded-lg bg-red-500 hover:bg-red-700 dark:hover:bg-red-600"
+                >
                   Sign out <FaArrowRight />
                 </button>
               </div>
@@ -185,7 +198,7 @@ function NavBar() {
         <div className="bg-gray-100 dark:bg-zinc-700 w-full h-[2px]"></div>
         <nav className="flex flex-col px-8 py-10 space-y-7 text-4xl font-medium">
           <NavLink
-            to="/"
+            to="/overview"
             className={({ isActive }) =>
               `cursor-pointer ${
                 isActive ? "text-blue-600" : "text-gray-600 dark:text-gray-300"
